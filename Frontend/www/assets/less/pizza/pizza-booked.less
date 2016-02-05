@@ -3,12 +3,14 @@
   position: relative;
   padding-bottom: 10px;
   border-bottom: 1px solid lighten(#000, 85%);
+  overflow: hidden;
 
   .radius{
     margin-right: 10px;
   }
 
   .buttons{
+
     .glyphicon{
 
       cursor: pointer;
@@ -44,6 +46,10 @@
         background-color: #EC971F;
       }
     }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 12px;
+    }
   }
 
   .image{
@@ -52,6 +58,14 @@
       position: absolute;
       right: -30px;
       top:20px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      img{
+        max-height: 88px;
+        position: absolute;
+        right: -40px;
+      }
     }
   }
 }
