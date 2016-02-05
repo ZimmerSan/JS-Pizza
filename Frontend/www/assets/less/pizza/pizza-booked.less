@@ -1,0 +1,57 @@
+.pizza-booked{
+
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lighten(#000, 85%);
+
+  .radius{
+    margin-right: 10px;
+  }
+
+  .buttons{
+    .glyphicon{
+
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      color: white;
+
+      -webkit-transition: background-color .1s ease;
+      -moz-transition: background-color .1s ease;
+      -o-transition: background-color .1s ease;
+      transition: background-color .1s ease;
+
+      &.glyphicon-plus{
+        background-color: #5CB85C;
+      }
+      &.glyphicon-plus:hover{
+        background-color: #449D44;
+      }
+
+      &.glyphicon-minus{
+        margin-left: 20px;
+        background-color: #D9534F;
+      }
+      &.glyphicon-minus:hover{
+        background-color: #C9302C;
+      }
+
+      &.glyphicon-remove{
+        margin-left: 20px;
+        background-color: #F0AD4E;
+      }
+      &.glyphicon-remove:hover{
+        background-color: #EC971F;
+      }
+    }
+  }
+
+  .image{
+    img{
+      max-height: 88px;
+      position: absolute;
+      right: -30px;
+      top:20px;
+    }
+  }
+}
