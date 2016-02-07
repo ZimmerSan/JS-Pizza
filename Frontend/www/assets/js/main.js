@@ -206,7 +206,13 @@ $(function(){
 
     $filter_buttons.find("a").click(function(){
         PizzaMenu.filterPizza(this.id);
+        $filter_buttons.find("a").each(function(i, item){
+            $(item).removeClass("btn-success");
+        });
+        $(this).addClass("btn-success");
     });
+
+
 
 });
 },{"./Pizza_List":1,"./pizza/PizzaCart":4,"./pizza/PizzaMenu":5}],4:[function(require,module,exports){
@@ -369,7 +375,6 @@ function filterPizza(filter) {
             if(pizza.content[filter]) pizza_shown.push(pizza);
         });
     }
-
     //Показати відфільтровані піци
     showPizzaList(pizza_shown);
 }

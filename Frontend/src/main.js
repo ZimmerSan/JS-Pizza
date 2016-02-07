@@ -15,6 +15,12 @@ $(function(){
 
     $filter_buttons.find("a").click(function(){
         PizzaMenu.filterPizza(this.id);
+        $filter_buttons.find("a").each(function(i, item){
+            $(item).removeClass("btn-success");
+        });
+        $(this).addClass("btn-success");
     });
+
+
 
 });
