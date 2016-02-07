@@ -42,14 +42,14 @@
             </div><!-- /header -->
             <div class="col-lg-12 content">
                 <div class="row text-center inner-header">
-                    <h2>All pizzas  <span class="badge">5</span></h2>
+                    <h2>All pizzas  <span class="badge" id="existing-number"></span></h2>
                     <span class="inner-navbar">
-                        <a class="btn btn-success">Усі</a>
-                        <a class="btn">М'ясні</a>
-                        <a class="btn">З ананасами</a>
-                        <a class="btn">З грибами</a>
-                        <a class="btn">З морепродуктами</a>
-                        <a class="btn">Вега</a>
+                        <a class="btn btn-success" id="all">Усі</a>
+                        <a class="btn" id="meat">М'ясні</a>
+                        <a class="btn" id="pineapple">З ананасами</a>
+                        <a class="btn" id="mushroom">З грибами</a>
+                        <a class="btn" id="ocean">З морепродуктами</a>
+                        <a class="btn" id="vega">Вега</a>
                     </span>
                 </div>
                 <div class="row" id="pizza_list">
@@ -60,7 +60,7 @@
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-5 right-panel">
             <div class="header navbar">
                 <div class="navbar-header">
-                    <h4 class="navbar-brand"><b>Замовлення <span class="badge">5</span></b></h4>
+                    <h4 class="navbar-brand"><b>Замовлення <span class="badge" id="booked-number"></span></b></h4>
                     <a class="navbar-brand pull-right clear">Очистити <span class="visible-lg-inline-block">замовлення</span></a>
                 </div>
             </div>

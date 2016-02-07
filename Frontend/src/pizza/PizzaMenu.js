@@ -29,19 +29,24 @@ function showPizzaList(list) {
     }
 
     list.forEach(showOnePizza);
+
+    $("#existing-number").text(list.length);
 }
 
 function filterPizza(filter) {
     //Масив куди потраплять піци які треба показати
     var pizza_shown = [];
-
-    Pizza_List.forEach(function(pizza){
-        //Якщо піца відповідає фільтру
-        //pizza_shown.push(pizza);
-
-        //TODO: зробити фільтри
-    });
-
+    console.log(filter);
+    if(filter === "all") pizza_shown = Pizza_List;
+    else if(filter === "vega") {
+        Pizza_List.forEach(function(pizza){
+            if(pizza.type === 'Вега піца') pizza_shown.push(pizza);
+        });
+    } else {
+        Pizza_List.forEach(function(pizza){
+            if(pizza.content[filter]) pizza_shown.push(pizza);
+        });
+    }
     //Показати відфільтровані піци
     showPizzaList(pizza_shown);
 }

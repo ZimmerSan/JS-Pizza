@@ -97,6 +97,7 @@ function updateCart() {
 
     Cart.forEach(showOnePizzaInCart);
 
+    $("#booked-number").text(Cart.length);
 }
 
 exports.removeFromCart = removeFromCart;

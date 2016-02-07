@@ -10,4 +10,11 @@ $(function(){
 
     PizzaCart.initialiseCart();
     PizzaMenu.initialiseMenu();
+
+    var $filter_buttons = $(".inner-navbar");
+
+    $filter_buttons.find("a").click(function(){
+        PizzaMenu.filterPizza(this.id);
+    });
+
 });
