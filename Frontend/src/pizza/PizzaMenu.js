@@ -9,7 +9,7 @@ var Pizza_List = require('../Pizza_List');
 var $pizza_list = $("#pizza_list");
 
 function showPizzaList(list) {
-    //Очищаємо старі піци в кошику
+    //Очищаємо старі піци в меню
     $pizza_list.html("");
 
     //Онволення однієї піци
@@ -36,7 +36,7 @@ function filterPizza(filter) {
     var pizza_shown = [];
 
     Pizza_List.forEach(function(pizza){
-        //Якщо піка відповідає фільтру
+        //Якщо піца відповідає фільтру
         //pizza_shown.push(pizza);
 
         //TODO: зробити фільтри
