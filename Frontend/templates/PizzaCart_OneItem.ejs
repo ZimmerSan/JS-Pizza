@@ -1,5 +1,5 @@
 <div class="row pizza-booked">
-    <div class="col-md-9 col-sm-10">
+    <div class="col-md-9 col-sm-10 left">
         <h4><%= pizza.title %> (<%= size %>)</h4>
         <span class="radius"><img src="assets/images/size-icon.svg"> <%= pizza[size].size %></span>
         <span class="weight"><img src="assets/images/weight.svg"> <%= pizza[size].weight %></span>
@@ -12,6 +12,6 @@
         </p>
     </div>
     <div class="visible-lg-block visible-md-block visible-sm-block col-md-3 col-sm-2 image">
-        <img src="<% pizza.icon %>">
+        <img src="<%= pizza.icon %>">
     </div>
 </div>

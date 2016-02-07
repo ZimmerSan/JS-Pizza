@@ -17,13 +17,20 @@ var $cart = $("#cart");
 
 function addToCart(pizza, size) {
     //Додавання однієї піци в кошик покупок
-
-    //Приклад реалізації, можна робити будь-яким іншим способом
-    Cart.push({
-        pizza: pizza,
-        size: size,
-        quantity: 1
+    var unique = true;
+    Cart.forEach(function(item){
+        if(item.pizza.id === pizza.id && item.size === size){
+            item.quantity++;
+            unique = false;
+        }
     });
+    //Приклад реалізації, можна робити будь-яким іншим способом
+    if(unique)
+        Cart.push({
+            pizza: pizza,
+            size: size,
+            quantity: 1
+        });
 
     //Оновити вміст кошика на сторінці
     updateCart();

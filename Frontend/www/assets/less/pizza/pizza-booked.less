@@ -9,6 +9,10 @@
     margin-right: 10px;
   }
 
+  .left{
+    padding-right: 0;
+  }
+
   .buttons{
 
     .glyphicon{
@@ -31,7 +35,7 @@
       }
 
       &.glyphicon-minus{
-        margin-left: 20px;
+        margin-left: 15px;
         background-color: #D9534F;
       }
       &.glyphicon-minus:hover{
@@ -45,11 +49,13 @@
       &.glyphicon-remove:hover{
         background-color: #EC971F;
       }
+
+      @media screen and (max-width: 1024px) {
+        font-size: 10px;
+        padding: 7px;
+      }
     }
 
-    @media screen and (max-width: 1024px) {
-      font-size: 12px;
-    }
   }
 
   .image{
