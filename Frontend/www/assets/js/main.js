@@ -229,7 +229,7 @@ function addToCart(pizza, size) {
             unique = false;
         }
     });
-    //Приклад реалізації, можна робити будь-яким іншим способом
+
     if(unique)
         Cart.push({
             pizza: pizza,
@@ -243,7 +243,9 @@ function addToCart(pizza, size) {
 
 function removeFromCart(cart_item) {
     //Видалити піцу з кошика
-    //TODO: треба зробити
+    Cart = $.grep(Cart, function(value) {
+        return value.pizza.id != cart_item.pizza.id || value.size != cart_item.size;
+    });
 
     //Після видалення оновити відображення
     updateCart();
@@ -267,6 +269,7 @@ function updateCart() {
     //Тут можна наприклад показати оновлений кошик на екрані та зберегти вміт кошика в Local Storage
 
     //Очищаємо старі піци в кошику
+
     $cart.html("");
 
     //Онволення однієї піци
@@ -280,6 +283,17 @@ function updateCart() {
             cart_item.quantity += 1;
 
             //Оновлюємо відображення
+            updateCart();
+        });
+
+        $node.find(".minus").click(function(){
+            cart_item.quantity -= 1;
+            if(cart_item.quantity <= 0) removeFromCart(cart_item);
+            updateCart();
+        });
+
+        $node.find(".remove").click(function(){
+            removeFromCart(cart_item);
             updateCart();
         });
 
