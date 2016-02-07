@@ -12,6 +12,7 @@ $(function(){
     PizzaMenu.initialiseMenu();
 
     var $filter_buttons = $(".inner-navbar");
+    var $clear_button = $(".right-panel .clear");
 
     $filter_buttons.find("a").click(function(){
         PizzaMenu.filterPizza(this.id);
@@ -21,6 +22,10 @@ $(function(){
         $(this).addClass("btn-success");
     });
 
-
+    $clear_button.click(function(){
+        PizzaCart.getPizzaInCart().forEach(function(item){
+           PizzaCart.removeFromCart(item);
+        });
+    });
 
 });
