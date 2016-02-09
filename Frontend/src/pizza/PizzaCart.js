@@ -2,6 +2,7 @@
  * Created by chaika on 02.02.16.
  */
 var Templates = require('../Templates');
+var Storage = require('../Storage');
 
 //Перелік розмірів піци
 var PizzaSize = {
@@ -49,7 +50,9 @@ function removeFromCart(cart_item) {
 function initialiseCart() {
     //Фукнція віпрацьвуватиме при завантаженні сторінки
     //Тут можна наприклад, зчитати вміст корзини який збережено в Local Storage то показати його
-    //TODO: ...
+
+    var savedPizza = Storage.get("cart");
+    if(savedPizza) Cart = savedPizza;
 
     updateCart();
 }
@@ -66,11 +69,14 @@ function updateCart() {
     //Очищаємо старі піци в кошику
 
     $cart.html("");
+    $(".footer .summ").text(0);
+    var totalPrice = 0;
 
     //Онволення однієї піци
     function showOnePizzaInCart(cart_item) {
         var html_code = Templates.PizzaCart_OneItem(cart_item);
-
+        totalPrice += cart_item.quantity * cart_item.pizza[cart_item.size].price;
+        $(".footer .summ").text(totalPrice);
         var $node = $(html_code);
 
         $node.find(".plus").click(function(){
@@ -98,6 +104,8 @@ function updateCart() {
     Cart.forEach(showOnePizzaInCart);
 
     $("#booked-number").text(Cart.length);
+
+    Storage.set("cart", Cart);
 }
 
 exports.removeFromCart = removeFromCart;
