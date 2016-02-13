@@ -1,0 +1,33 @@
+<% include common/header.ejs %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-xs-7 left-panel">
+
+            <div class="col-lg-12 content">
+                <div class="row text-center inner-header">
+                    <h2>All pizzas  <span class="badge" id="existing-number"></span></h2>
+                    <span class="inner-navbar">
+                        <a class="btn btn-success" id="all">Усі</a>
+                        <a class="btn" id="meat">М'ясні</a>
+                        <a class="btn" id="pineapple">З ананасами</a>
+                        <a class="btn" id="mushroom">З грибами</a>
+                        <a class="btn" id="ocean">З морепродуктами</a>
+                        <a class="btn" id="vega">Вега</a>
+                    </span>
+                </div>
+                <div class="row" id="pizza_list">
+                    <!--Pizza will appear here-->
+                </div>
+            </div><!-- /content -->
+        </div><!-- /left-panel -->
+        <% include common/rightPanel.ejs %>
+    </div>
+
+    <div class="sticker">
+        <img src="assets/images/discount.svg">
+        <span>Sticker</span>
+    </div>
+</div>
+
+<% include common/footer.ejs %>

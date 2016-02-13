@@ -43,3 +43,23 @@ h3{
     top: -8px;
   }
 }
+
+.header.main {
+  background: @headerColor;
+  color: @buttonTextColor;
+  opacity: @headerOpacity;
+  padding: 10px 20px;
+  right: 0;
+  top: 0;
+  z-index: 900;
+
+  .header-top {
+    padding-bottom: 5px;
+    border-bottom: 1px solid @buttonTextColor;
+    opacity: @headerOpacity;
+
+    span {
+      margin-right: 25px;
+    }
+  }
+}
