@@ -9,6 +9,6 @@ exports.mainPage = function(req, res) {
 
 exports.orderPage = function(req, res) {
     res.render('orderPage', {
-        pageTitle: 'Замовити Піцу'
+        pageTitle: 'Замовити Піцу',
     });
 };

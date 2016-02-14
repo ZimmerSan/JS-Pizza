@@ -33,18 +33,11 @@ $(function(){
     });
 
     $('.makeOrder').click(function(){
-        API.createOrder({
-            name: "Andrii",
-            phone: "Phone",
-            pizza: PizzaCart.getPizzaInCart()
-        }, function(err, result){
-            if(err) {
-                alert("Can't create order");
-            } else {
-                window.location = "/order.html";
-                //alert("Order created");
-            }
-        });
+        window.location = "/order.html";
+    });
+
+    $('.editOrder').click(function(){
+        window.location = "/";
     });
 
     $( ".order-page-panel form input" ).keyup(function() {
@@ -52,9 +45,25 @@ $(function(){
     });
 
     $('.contact-form .next-step-button').click(function() {
+        var res = true;
         $('.order-page-panel form input').each(function (i, item) {
-            ValidateForm.validateForm($(item));
+            res = ValidateForm.validateForm($(item));
         });
+
+        if(res)
+            API.createOrder({
+                name: $('#inputName').val(),
+                phone: $('#inputPhone').val(),
+                address: $('#inputAddress').val(),
+                pizza: PizzaCart.getPizzaInCart()
+            }, function(err, result){
+                if(err) {
+                    alert("Can't create order");
+                } else {
+                    window.location = "/order.html";
+                    //alert("Order created");
+                }
+            });
     });
 
 });
