@@ -1,6 +1,3 @@
-/**
- * Created by chaika on 09.02.16.
- */
 var API_URL = "http://localhost:5050";
 
 function backendGet(url, callback) {
@@ -25,7 +22,7 @@ function backendPost(url, data, callback) {
         success: function(data){
             callback(null, data);
         },
-        fail: function() {
+        fail: function(){
             callback(new Error("Ajax Failed"));
         }
     })

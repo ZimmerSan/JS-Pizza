@@ -9,7 +9,7 @@
                         <div class="col-md-12 form-description"><h3>1. Контактні дані</h3></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <form class="form-horizontal">
                                 <div class="form-group name-group">
                                     <label class="col-sm-2 control-label">Ім’я</label>
@@ -29,7 +29,7 @@
                                                placeholder="+380123456789">
                                     </div>
                                     <span class="validation-fail phone-help-block" style="display:none">
-                                        Введіть номер телефону у форматі +380 або почніть з 0
+                                        Введіть у форматі +380 або почніть з 0
                                     </span>
                                 </div>
                                 <div class="form-group address-group">
@@ -45,7 +45,17 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-5 order-cummary"></div>
+                        <div class="col-md-6 order-summary">
+                            <div class=" bs-callout bs-callout-warning">
+                                <h4>Інформація про замовлення</h4>
+                                <p class="order-summary-time">
+                                    <b>Приблизний час доставки:</b> <span>невідомий</span>
+                                </p>
+                                <p class="order-summary-address">
+                                    <b>Адреса доставки:</b> <span>невідома</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="form-group pull-right">
@@ -56,6 +66,8 @@
                         </div>
                     </div>
                 </div>
+                <div class="google-maps" id="googleMap"></div>
+                <div id="liqpay"></div>
             </div><!-- /content -->
         </div><!-- /left-panel -->
     </div>
